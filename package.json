@@ -5,6 +5,7 @@
    "engines": {
     "node": "18.x"
   },
+  "NODE_OPTIONS": "--openssl-legacy-provider",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
