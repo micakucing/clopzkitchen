@@ -15,14 +15,14 @@ const Navbar = () => {
       <h6 className={styles.logo}>Clopzkicthen</h6>
       <ul className={styles.links}>
         <li className={styles.navlink}>
-          <Link href="/">Homes</Link>
+          <Link href="/">Awalan</Link>
         </li>
         <li className={styles.navlink}>
-          <Link href="/shop">Shop</Link>
+          <Link href="/shop">Toko</Link>
         </li>
         <li className={styles.navlink}>
           <Link href="/cart">
-            <a>Cart ({getItemsCount()})</a>
+            <a>Keranjang ({getItemsCount()})</a>
           </Link>
         </li>
       </ul>
