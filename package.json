@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
    "engines": {
-    "node": "16.x"
+    "node": "22.x"
   }, 
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+      "dev": "export NODE_OPTIONS=--openssl-legacy-provider; next dev",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; next build",
+   
     "start": "next start",
      "export": "next export"
   },
