@@ -1,4 +1,4 @@
-import Image from 'next/image';
+//import Image from 'next/image';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   incrementQuantity,
@@ -35,7 +35,7 @@ const CartPage = () => {
           {cart.map((item) => (
             <div className={styles.body}>
               <div className={styles.image}>
-                <Image src={item.image} height="90" width="65" />
+                <image src={item.image} height="90" width="65" />
               </div>
               <p>{item.product}</p>
               <p>$ {item.price}</p>
