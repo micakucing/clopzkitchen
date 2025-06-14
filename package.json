@@ -4,8 +4,7 @@
   "private": true,
    "engines": {
     "node": "16.x"
-  },
-  "NODE_OPTIONS": "--openssl-legacy-provider",
+  }, 
   "scripts": {
     "dev": "next dev",
     "build": "next build",
