@@ -2,7 +2,9 @@
   "name": "shopping-cart",
   "version": "0.1.0",
   "private": true,
-   "node": "16.x",
+   "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
