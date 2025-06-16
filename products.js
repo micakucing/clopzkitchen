@@ -2,43 +2,43 @@
 var products = {
     1: {
         name: "Cireng ayam (kecil)",
-        img: "JS-CART-1.png",
+        img: "ayamkecil.jpg",
         price: 1000,
         category: "cireng"
     },
     2: {
         name: "Cireng ayam (besar)",
-        img: "JS-CART-2.png",
+        img: "ayam.jpg",
         price: 2000,
         category: "cireng besar"
     },
     3: {
         name: "Cireng ati (kecil)",
-        img: "JS-CART-1.png",
+        img: "ati.jpg",
         price: 1000,
         category: "cireng"
     },
     4: {
         name: "Cireng ati (besar)",
-        img: "JS-CART-2.png",
+        img: "atibesar.jpg",
         price: 2000,
         category: "cireng"
     }, 
     5: {
         name: "Cireng keju (kecil)",
-        img: "JS-CART-1.png",
+        img: "keju.jpg",
         price: 1000,
         category: "cireng"
     },
     6: {
         name: " Cireng keju (besar)",
-        img: "JS-CART-2.png",
+        img: "kejubesar.jpeg",
         price: 2000,
         category: "cireng"
     },
     7: {
         name: " Takoyaki",
-        img: "JS-CART-2.png",
+        img: "takoyaki.jpeg",
         price: 2000,
         category: "takoyaki"
     },
@@ -52,15 +52,15 @@ var products = {
 
     8: {
         name: " dimsum",
-        img: "JS-CART-2.png",
+        img: "dimsum.jpeg",
         price: 2000,
         category: "dimsum"
     },
 
     10: {
-        name: " Risoles",
-        img: "JS-CART-2.png",
-        price: 2000,
+        name: " Risoles ayam pedas / 3 pcs",
+        img: "risolayam.jpg",
+        price: 5000,
         category: "risoles"
     }
 };

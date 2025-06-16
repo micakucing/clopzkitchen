@@ -4,13 +4,19 @@ const rupiah = (number)=>{
       currency: "IDR"
     }).format(number);
   };
+function sendToWhatsApp() { 
+  const message = document.getElementById('message').value;
+  const whatsappLink = `https://api.whatsapp.com/send?phone=085718787490&text=${encodeURIComponent(message)}`;
 
+  window.open(whatsappLink, '_blank');
+}
  var cart = {
   // (A) PROPERTIES
   hPdt : null,      // html products list
   hItems : null,    // html current cart
+  hform : null,    // html current cart
   items : {},       // current items in cart
-  iURL : "images/", // product image url folder
+  iURL : "asset/image/", // product image url folder
   currency : "",   // currency symbol
   total : 0,        // total amount
 
@@ -104,16 +110,19 @@ const rupiah = (number)=>{
     // (D2) CART IS EMPTY
     if (empty) {
       item = document.createElement("div");
-      item.innerHTML = "Cart is empty";
+      item.innerHTML = "Keranjang masih kosong";
       cart.hItems.appendChild(item);
+            form = document.getElementById("form");
+form.innerHTML=''
     }
 
     // (D3) CART IS NOT EMPTY - LIST ITEMS
     else {
       let template = document.getElementById("template-cart").content, p, item;
-    
+ 
+ 
       for (let id in cart.items) {
-        console.log(products)
+        //console.log(products)
         item = template.cloneNode(true);
         item.querySelector(".c-del").onclick = () => cart.remove(id);
         item.querySelector(".c-name").textContent = products[id].name;
@@ -130,9 +139,11 @@ const rupiah = (number)=>{
       item.id = "c-total";
       item.innerHTML = `TOTAL: ${rupiah(cart.total)}`;
       cart.hItems.appendChild(item);
-
+ 
       // (D3-4) EMPTY & CHECKOUT
       item = document.getElementById("template-cart-checkout").content.cloneNode(true);
+      form = document.getElementById("form");
+      form.innerHTML='<form id="whatsapp-form"><label for="phone">Phone Number:</label><input type="tel" id="phone" name="phone" required><br><br><label for="message">Message:</label><textarea id="message" name="message" rows="4" cols="50"></textarea><br><br><button type="button" onclick="sendToWhatsApp()">Send</button></form>';
       cart.hItems.appendChild(item);
     }
   },
