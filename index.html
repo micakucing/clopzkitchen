@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple JS Cart</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+</head>
+
+<body>
+    <!-- (A) CART -->
+
+        <ul>
+            <li onclick="cart.filter('cireng')" data-product="cireng">
+                cireng
+            </li>
+            <li onclick="cart.filter('takoyaki')" data-product="takoyaki">
+                takoyaki
+            </li>
+             <li onclick="cart.filter('risoles')" data-product="risoles">
+                risoles
+            </li>
+              <li onclick="cart.filter('dimsum')" data-product="dimsum">
+                dimsum
+            </li>
+              <li onclick="cart.filter('martabak')" data-product="martabak">
+                martabak madura
+            </li>
+        </ul>
+
+    <div id="cart-wrap">
+
+
+        <!-- (A1) PRODUCTS LIST -->
+        <div id="cart-products"></div>
+
+        <!-- (A2) CURRENT CART ITEMS -->
+        <div id="cart-items"></div>
+    </div>
+
+    <!-- (B) TEMPLATES -->
+    <!-- (B1) PRODUCT CELL -->
+    <template id="template-product">
+        <div class="p-item">
+            <img class="p-img">
+            <div class="p-info">
+                <div class="p-txt">
+                    <div class="p-name"></div>
+                    <div class="p-price"></div>
+                </div>
+                <button class="cart p-add">+</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- (B2) CART ITEMS -->
+    <template id="template-cart">
+        <div class="c-item">
+            <input class="c-qty" type="number" min="0">
+            <div class="c-name"></div>
+            <button class="c-del cart">X</button>
+        </div>
+    </template>
+    <template id="template-cart-checkout">
+        <div class="c-go">
+            <button class="c-empty cart" onclick="cart.nuke()">Hapus Semua</button>
+            <button class="c-checkout cart" onclick="cart.checkout()">Pesan Sekarang</button>
+        </div>
+    </template>
+</body>
+
+</html>
