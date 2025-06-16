@@ -26,7 +26,7 @@ const rupiah = (number)=>{
   },
 
   // (B3) EMPTY ENTIRE CART
-  nuke : () => { if (confirm("Empty cart?")) {
+  nuke : () => { if (confirm("Keranjang masih kosong")) {
     cart.items = {};
     localStorage.removeItem("cart");
     cart.list();
