@@ -6,7 +6,7 @@ const rupiah = (number)=>{
   };
 function sendToWhatsApp() { 
   const message = document.getElementById('message').value;
-  const whatsappLink = `https://api.whatsapp.com/send?phone=085718787490&text=${encodeURIComponent(message)}`;
+  const whatsappLink = `https://api.whatsapp.com/send?phone=6285718787490&text=${encodeURIComponent(message)}`;
 
   window.open(whatsappLink, '_blank');
 }
