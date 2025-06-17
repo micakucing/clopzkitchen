@@ -41,13 +41,24 @@ var cart = {
     cart.hPdt.innerHTML = "";
     let template = document.getElementById("template-product").content, p, item;
     for (let id in products) {
-      p = products[id];
+      p = products[id]; 
+      st = p.stok;
+      if(st === 'r'){
       item = template.cloneNode(true);
       item.querySelector(".p-img").src = cart.iURL + p.img;
       item.querySelector(".p-name").textContent = p.name;
       item.querySelector(".p-price").textContent = rupiah(p.price);
       item.querySelector(".p-add").onclick = () => cart.add(id);
       cart.hPdt.appendChild(item);
+      }else {
+          item = template.cloneNode(true);
+      item.querySelector(".p-img").src = cart.iURL + p.img;
+      item.querySelector(".p-name").textContent = p.name;
+      item.querySelector(".p-price").textContent = rupiah(p.price);
+       item.querySelector(".p-add").textContent= 'stok habis';
+      item.querySelector(".p-add").onclick = () => alert('maaf sudah stok habis');
+      cart.hPdt.appendChild(item);
+      }
     }
     // (C3) LOAD CART FROM PREVIOUS SESSION
     cart.load();
@@ -105,6 +116,7 @@ var cart = {
       let template = document.getElementById("template-cart").content, p, item;
       for (let id in cart.items) {
         //console.log(products)
+        
         item = template.cloneNode(true);
         item.querySelector(".c-del").onclick = () => cart.remove(id);
         item.querySelector(".c-name").textContent = products[id].name;

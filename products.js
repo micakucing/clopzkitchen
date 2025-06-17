@@ -5,49 +5,56 @@ var products = {
         name: "Cireng ayam (kecil)",
         img: "ayamkecil.jpg",
         price: 1000,
-        category: "cireng"
+        category: "cireng",
+        stok: "r"
     },
     2: {
         id: 2,
         name: "Cireng ayam (besar)",
         img: "ayam.jpg",
         price: 2000,
-        category: "cireng besar"
+        category: "cireng besar",
+         stok: "r"
     },
     3: {
         id: 3,
         name: "Cireng ati (kecil)",
         img: "ati.jpg",
         price: 1000,
-        category: "cireng"
+        category: "cireng",
+         stok: "r"
     },
     4: {
         id: 4,
         name: "Cireng ati (besar)",
         img: "atibesar.jpg",
         price: 2000,
-        category: "cireng"
+        category: "cireng",
+         stok: "r"
     }, 
     5: {
         id: 5,
         name: "Cireng keju (kecil)",
         img: "keju.jpg",
         price: 1000,
-        category: "cireng"
+        category: "cireng",
+         stok: "r"
     },
     6: {
         id: 6,
         name: " Cireng keju (besar)",
         img: "kejubesar.jpeg",
         price: 2000,
-        category: "cireng"
+        category: "cireng",
+         stok: "r"
     },
     7: {
         id: 7,
         name: " Takoyaki / 4 pcs",
         img: "takoyaki.jpeg",
         price: 5000,
-        category: "takoyaki"
+        category: "takoyaki",
+         stok: "r"
     },
 
     8: {
@@ -55,7 +62,8 @@ var products = {
         name: " Martabak",
         img: "JS-CART-2.png",
         price: 2000,
-        category: "martabak"
+        category: "martabak",
+         stok: "n"
     },
 
     9: {
@@ -63,7 +71,8 @@ var products = {
         name: " dimsum / 4 pcs",
         img: "dimsum.jpeg",
         price: 5000,
-        category: "dimsum"
+        category: "dimsum",
+         stok: "r"
     },
 
     10: {
@@ -71,6 +80,7 @@ var products = {
         name: " Risoles ayam pedas / 3 pcs",
         img: "risolayam.jpg",
         price: 5000,
-        category: "risoles"
+        category: "risoles",
+         stok: "r"
     }
 };
