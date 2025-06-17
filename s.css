@@ -96,6 +96,10 @@ overflow: hidden;
 }
 
 }
+
+.hidden {
+  display: none;
+}
 /* (C) CART */
 #cart-items {  
  background: #C1576A;
