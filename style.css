@@ -87,6 +87,15 @@ overflow: hidden;
 .p-price { color: #fff; }
 .p-add { font-size: 1em; width: 100%;  margin: 10px 0; padding: 5px;}
 
+
+/* media query */
+@media (max-width: 999px) {
+
+#cart-products { 
+  grid-template-columns: repeat(1, 1fr); 
+}
+
+}
 /* (C) CART */
 #cart-items {  
  background: #C1576A;
