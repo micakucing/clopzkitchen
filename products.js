@@ -82,5 +82,13 @@ var products = {
         price: 5000,
         category: "risoles",
          stok: "r"
+    },
+    11: {
+        id: 11,
+        name: " Risoles mayones original / 3 pcs",
+        img: "mayones.jpg",
+        price: 5000,
+        category: "risoles",
+         stok: "r"
     }
 };
