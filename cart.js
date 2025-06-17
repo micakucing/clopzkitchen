@@ -44,8 +44,8 @@ var cart = {
     // (C2) DRAW PRODUCTS LIST
     cart.hPdt.innerHTML = "";
     let template = document.getElementById("template-product").content, p, item;
-   
-   
+
+
     for (let id in products) {
       p = products[id];
       item = template.cloneNode(true);
@@ -74,6 +74,13 @@ var cart = {
     for (let id in products) {
       //n = products[name];
       if (products[id].category === e) {
+        item = template.cloneNode(true);
+        item.querySelector(".p-img").src = cart.iURL + products[id].img;
+        item.querySelector(".p-name").textContent = products[id].name;
+        item.querySelector(".p-price").textContent = rupiah(products[id].price);
+        item.querySelector(".p-add").onclick = () => cart.add(id);
+        cart.hPdt.appendChild(item);
+      } else if (e === '*') {
         item = template.cloneNode(true);
         item.querySelector(".p-img").src = cart.iURL + products[id].img;
         item.querySelector(".p-name").textContent = products[id].name;
@@ -118,16 +125,16 @@ var cart = {
         item.querySelector(".c-name").textContent = products[id].name;
 
         item.querySelector(".c-qty").value = cart.items[id];
-        item.querySelector(".c-qty").onchange = function () { 
-          
-          cart.change(id, this.value); 
-         //alasql("UPDATE keranjang SET jumlah = "+this.value+" WHERE id ="+products[id].id);
+        item.querySelector(".c-qty").onchange = function () {
+
+          cart.change(id, this.value);
+          //alasql("UPDATE keranjang SET jumlah = "+this.value+" WHERE id ="+products[id].id);
         };
         cart.hItems.appendChild(item);
         cart.total += cart.items[id] * products[id].price;
         object = { name: products[id].name, quantitas: cart.items[id] };
 
-      } 
+      }
       //console.log(object)
       // (D3-3) TOTAL AMOUNT
       item = document.createElement("div");
@@ -150,8 +157,8 @@ var cart = {
   // (E) ADD ITEM INTO CART
   add: id => {
     if (cart.items[id] == undefined) { cart.items[id] = 1; }
-    else { 
-      cart.items[id]++; 
+    else {
+      cart.items[id]++;
 
     }
 
@@ -201,10 +208,9 @@ var cart = {
     // RECORD TO DATABASE
     // PAYMENT
     // WHATEVER IS REQUIRED
-                //console.log(myArray)
-//console.log(cart.total)
+    //console.log(myArray)
+    //console.log(cart.total)
 
-    alert("TO DO");
 
     /*
     var data = new FormData();
@@ -217,28 +223,31 @@ var cart = {
     .then(res => console.log(res))
     .catch(err => console.error(err));
     */
- 
+
     var namepro = [];
     var jumlah = [];
     var semuatotal;
     i = 1;
-     for (let id in cart.items) {
-    // const li = document.createElement('li');
+    for (let id in cart.items) {
+      // const li = document.createElement('li');
       // li.textContent = item;
       //ul.appendChild(li);
-     // namepro.push(item.name + ' - ( ' + item.quantitas + ' )');
-     
-     perharga = cart.items[id] * products[id].price;
-     semuatotal +=cart.items[id] * products[id].price; 
-    namepro.push( i+'. '+ products[id].name+ ' - ( ' + cart.items[id] + ' * '+products[id].price+' = ' + perharga +')')
-i++;
+      // namepro.push(item.name + ' - ( ' + item.quantitas + ' )');
 
-     } 
- 
-  totalfinal =  encodeURIComponent('\n\nTOTAL BAYAR: '+rupiah(cart.total)+'\n terima kasih sudah belanja di clopz kitchen')
+      perharga = cart.items[id] * products[id].price;
+      semuatotal += cart.items[id] * products[id].price;
+      namepro.push(i + '. ' + products[id].name + ' - ( ' + cart.items[id] + ' * ' + products[id].price + ' = ' + perharga + ')')
+      i++;
+
+    }
+
+    totalfinal = encodeURIComponent('\n\nTOTAL BAYAR: ' + rupiah(cart.total) + '\n terima kasih sudah belanja di clopz kitchen')
     content = namepro;
+
+    alert("terima kasih sudah belanja cemilan di clopz kitchen \n \n sebentar lagi anda akan di hubungkan ke admin clopz kitchen");
+
     // const message = document.getElementById('message').value;
-const whatsappLink = `https://api.whatsapp.com/send?phone=6285718787490&text=${encodeURIComponent(content.join('\n'))} ${totalfinal}`;
+    const whatsappLink = `https://api.whatsapp.com/send?phone=6285718787490&text=${encodeURIComponent(content.join('\n'))} ${totalfinal}`;
     namepro = [];
     myArray = [];
     cart.items = {};
@@ -246,10 +255,9 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=6285718787490&text=${e
     cart.total = 0;
     cart.hItems.innerHTML = "";
     window.open(whatsappLink, '_blank');
-   window.location.reload()
+    window.location.reload()
 
   }
 };
-
 window.addEventListener("DOMContentLoaded", cart.init);
 
