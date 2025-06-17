@@ -60,9 +60,9 @@ var products = {
 
     9: {
         id: 9,
-        name: " dimsum",
+        name: " dimsum / 4 pcs",
         img: "dimsum.jpeg",
-        price: 2000,
+        price: 5000,
         category: "dimsum"
     },
 

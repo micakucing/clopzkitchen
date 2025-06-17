@@ -29,7 +29,7 @@ var cart = {
 
   // (B3) EMPTY ENTIRE CART
   nuke: () => {
-    if (confirm("Keranjang masih kosong")) {
+    if (confirm("Apa anda yakin akan menghapus semua keranjang belanja anda")) {
       cart.items = {};
       localStorage.removeItem("cart");
       cart.list();
@@ -235,7 +235,7 @@ i++;
 
      } 
  
-  totalfinal =  encodeURIComponent('\n\nTOTAL BAYAR: '+rupiah(cart.total))
+  totalfinal =  encodeURIComponent('\n\nTOTAL BAYAR: '+rupiah(cart.total)+'\n terima kasih sudah belanja di clopz kitchen')
     content = namepro;
     // const message = document.getElementById('message').value;
 const whatsappLink = `https://api.whatsapp.com/send?phone=6285718787490&text=${encodeURIComponent(content.join('\n'))} ${totalfinal}`;
