@@ -108,7 +108,7 @@ overflow: hidden;
   align-items: center;
   background: #fca4a6;
 }
-.c-item:nth-child(even) { background: #C1576A; }
+.c-item:nth-child(even) { background: #fca4a6; }
 .c-qty {
   width: 60px;
   padding: 10px;
