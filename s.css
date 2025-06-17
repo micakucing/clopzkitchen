@@ -53,7 +53,9 @@ input.cart, button.cart {
   background: #C1576A;
   cursor: pointer;
 }
-
+.navbar-toggler {
+    background-color: #C1576A;
+}
 /* (B) PRODUCTS */
 #cart-products {
   display: grid;
