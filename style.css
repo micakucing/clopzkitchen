@@ -68,7 +68,7 @@ overflow: hidden;
 
 }
 
-.navbarOffcanvas {
+#navbarOffcanvas {
   background: #713939 !important;
 }
 .p-img { width: 100%; object-fit: cover; height: 100%; }
