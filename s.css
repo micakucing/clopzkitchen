@@ -60,6 +60,9 @@ input.cart, button.cart {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px; padding: 10px;
 }
+#cart-products li {
+    list-style: none;
+}
 .p-item { position: relative; height: 100%; 
 
 overflow: hidden;
