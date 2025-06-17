@@ -2,7 +2,7 @@
 var products = {
     1: {
         id: 1,
-        name: "Cireng ayam (kecil)",
+        name: "Cireng ayam (kecil) / 1 pcs",
         img: "ayamkecil.jpg",
         price: 1000,
         category: "cireng",
@@ -10,7 +10,7 @@ var products = {
     },
     2: {
         id: 2,
-        name: "Cireng ayam (besar)",
+        name: "Cireng ayam (besar) / 1 pcs",
         img: "ayam.jpg",
         price: 2000,
         category: "cireng besar",
@@ -18,7 +18,7 @@ var products = {
     },
     3: {
         id: 3,
-        name: "Cireng ati (kecil)",
+        name: "Cireng ati (kecil) / 1 pcs",
         img: "ati.jpg",
         price: 1000,
         category: "cireng",
@@ -26,7 +26,7 @@ var products = {
     },
     4: {
         id: 4,
-        name: "Cireng ati (besar)",
+        name: "Cireng ati (besar) / 1 pcs",
         img: "atibesar.jpg",
         price: 2000,
         category: "cireng",
@@ -34,7 +34,7 @@ var products = {
     }, 
     5: {
         id: 5,
-        name: "Cireng keju (kecil)",
+        name: "Cireng keju (kecil) / 1 pcs",
         img: "keju.jpg",
         price: 1000,
         category: "cireng",
@@ -42,7 +42,7 @@ var products = {
     },
     6: {
         id: 6,
-        name: " Cireng keju (besar)",
+        name: " Cireng keju (besar) / 1 pcs",
         img: "kejubesar.jpeg",
         price: 2000,
         category: "cireng",
@@ -60,7 +60,7 @@ var products = {
     8: {
         id: 8,
         name: " Martabak",
-        img: "JS-CART-2.png",
+        img: "martabak.jpg",
         price: 2000,
         category: "martabak",
          stok: "n"

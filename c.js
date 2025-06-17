@@ -128,7 +128,7 @@ var cart = {
                 item = template.cloneNode(true);
                 item.querySelector(".c-del").onclick = () => cart.remove(id);
                 item.querySelector(".namaproduk").textContent = products[id].name;
-                item.querySelector(".c-price").textContent = ' (' + rupiah(products[id].price) + ') / 4 pcs';
+                item.querySelector(".c-price").textContent = ' (' + rupiah(products[id].price) + ')';
                 item.querySelector(".c-qty").value = cart.items[id];
                 item.querySelector(".c-qty").onchange = function () {
                     cart.change(id, this.value);
