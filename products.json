@@ -1,100 +1,109 @@
  [
-    {
-        id: 1,
-        name: "Cireng ayam (kecil) / 1 pcs",
-        img: "ayamkecil.jpg",
-        price: 1000,
-        category: "cireng",
-        des: "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
-        stok: "r"
+    { 
+        "id": "1",
+        "name": "Cireng ayam (kecil) / 1 pcs",
+        "img": "ayamkecil.jpg",
+        "price": "1000",
+        "category": "cireng",
+        "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+        "stok": "r"
     },
     {
-        id: 2,
-        name: "Cireng ayam (besar) / 1 pcs",
-        img: "ayam.jpg",
-        price: 2000,
-        category: "cireng besar",
- 
-         stok: "r"
+        "id": 2,
+        "name": "Cireng ayam (besar) / 1 pcs",
+        "img": "ayam.jpg",
+        "price": 2000,
+        "category": "cireng besar",
+  "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 3,
-        name: "Cireng ati (kecil) / 1 pcs",
-        img: "ati.jpg",
-        price: 1000,
-        category: "cireng",
- 
-         stok: "r"
+        "id": 3,
+        "name": "Cireng ati (kecil) / 1 pcs",
+        "img": "ati.jpg",
+        "price": 1000,
+        "category": "cireng",
+  "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 4,
-        name: "Cireng ati (besar) / 1 pcs",
-        img: "atibesar.jpg",
-        price: 2000,
-        category: "cireng",
-         stok: "r"
+        "id": 4,
+        "name": "Cireng ati (besar) / 1 pcs",
+        "img": "atibesar.jpg",
+        "price": 2000,
+        "category": "cireng",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 5,
-        name: "Cireng keju (kecil) / 1 pcs",
-        img: "keju.jpg",
-        price: 1000,
-        category: "cireng",
-         stok: "r"
+        "id": 5,
+        "name": "Cireng keju (kecil) / 1 pcs",
+        "img": "keju.jpg",
+        "price": 1000,
+        "category": "cireng",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 6,
-        name: " Cireng keju (besar) / 1 pcs",
-        img: "kejubesar.jpeg",
-        price: 2000,
-        category: "cireng",
-         stok: "r"
+        "id": 6,
+        "name": " Cireng keju (besar) / 1 pcs",
+        "img": "kejubesar.jpeg",
+        "price": 2000,
+        "category": "cireng",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 7,
-        name: " Takoyaki / 4 pcs",
-        img: "takoyaki.jpeg",
-        price: 5000,
-        category: "takoyaki",
-         stok: "r"
+        "id": 7,
+        "name": " Takoyaki / 4 pcs",
+        "img": "takoyaki.jpeg",
+        "price": 5000,
+        "category": "takoyaki",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
-    {        id: 8,
-        name: " Martabak / 2 pcs",
-        img: "martabak.jpg",
-        price: 5000,
-        category: "martabak",
-         stok: "r"
-    },
-    {
-        id: 9,
-        name: " dimsum / 4 pcs",
-        img: "dimsum.jpeg",
-        price: 5000,
-        category: "dimsum",
-         stok: "r"
+    {        "id": 8,
+        "name": " Martabak / 2 pcs",
+        "img": "martabak.jpg",
+        "price": 5000,
+        "category": "martabak",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 10,
-        name: " Risoles ayam pedas / 3 pcs",
-        img: "risolayam.jpg",
-        price: 5000,
-        category: "risoles",
-         stok: "r"
+        "id": 9,
+        "name": " dimsum / 4 pcs",
+        "img": "dimsum.jpeg",
+        "price": 5000,
+        "category": "dimsum",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 11,
-        name: " Risoles mayones original / 3 pcs",
-        img: "mayones.jpeg",
-        price: 5000,
-        category: "risoles",
-         stok: "r"
+        "id": 10,
+        "name": " Risoles ayam pedas / 3 pcs",
+        "img": "risolayam.jpg",
+        "price": 5000,
+        "category": "risoles",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     },
     {
-        id: 12,
-        name: " Risoles mayones pedas / 3 pcs",
-        img: "mayopedas.jpg",
-        price: 5000,
-        category: "risoles",
-         stok: "r"
+        "id": 11,
+        "name": " Risoles mayones original / 3 pcs",
+        "img": "mayones.jpeg",
+        "price": 5000,
+        "category": "risoles",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
+    },
+    {
+        "id": 12,
+        "name": " Risoles mayones pedas / 3 pcs",
+        "img": "mayopedas.jpg",
+        "price": 5000,
+        "category": "risoles",
+         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
+         "stok": "r"
     }
 ]

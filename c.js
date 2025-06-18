@@ -37,7 +37,7 @@ var cart = {
     init: () => {
         // (C1) GET HTML ELEMENTS
         
-fetch('path/to/your/file.json')
+fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
