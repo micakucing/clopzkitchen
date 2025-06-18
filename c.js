@@ -98,6 +98,7 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen@main/data.json')
     },
     filter: (e) => {
         // (C1) GET HTML ELEMENTS
+        cart.ps.innerHTML="";
   attributeValue = event.target.getAttribute('data-product');
         document.getElementById("title-produk").innerHTML = attributeValue;
 
