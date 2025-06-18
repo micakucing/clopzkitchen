@@ -93,7 +93,7 @@ var products = {
     },
     12: {
         id: 12,
-        name: " Risoles mayones pedas / 3 pcs",
+        name: " Risoles mayones pedass / 3 pcs",
         img: "mayopedas.jpg",
         price: 5000,
         category: "risoles",
