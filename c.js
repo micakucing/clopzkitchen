@@ -5,14 +5,17 @@ const rupiah = (number) => {
     }).format(number);
 };
 var hargasemua = [];
-var myArray = [];
+var myArray = []; 
+var  datL = []; 
 var cart = {
     // (A) PROPERTIES
     hPdt: null,      // html products list
     hItems: null,    // html current cart
     hform: null,
     ps: null,   // html current cart
-    items: {},       // current items in cart
+    items: {},  
+  
+        // current items in cart
     iURL: "asset/image/", // product image url folder
     currency: "",   // currency symbol
     total: 0,
@@ -36,8 +39,8 @@ var cart = {
     // (C) INITIALIZE
     init: () => {
         // (C1) GET HTML ELEMENTS
-        /*
-fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
+  
+fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen@main/data.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -45,13 +48,10 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
     return response.json();
   })
   .then(products => {
-    console.log(products); // The parsed JSON data
+     // The parsed JSON data
     // You can now work with the 'data' object
-  })
-  .catch(error => {
-    console.error('Error loading JSON:', error);
-  });
-*/
+    datL.push(products);
+
   cart.hPdt = document.getElementById("cart-products");
         cart.hItems = document.getElementById("cart-items");
         cart.ps = document.getElementById("detail-ps");
@@ -60,8 +60,8 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
         cart.hPdt.innerHTML = "";
         cart.ps.innerHTML = "";
         let template = document.getElementById("template-product").content, p, item;
-        for (let id in products) {
-            p = products[id];
+        for (let id in datL[0]) {
+            p = datL[0][id];
             st = p.stok;
             if (st === 'r') {
                 item = template.cloneNode(true);
@@ -86,25 +86,40 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
         cart.load();
         // (C4) LIST CURRENT CART ITEMS
         cart.list();
+    
+        
 
+  })
+  .catch(error => {
+    console.error('Error loading JSON:', error);
+  });
+ 
+ 
     },
     filter: (e) => {
         // (C1) GET HTML ELEMENTS
+  attributeValue = event.target.getAttribute('data-product');
+        document.getElementById("title-produk").innerHTML = attributeValue;
+
+
+
+
+
+
         cart.hPdt = document.getElementById("cart-products");
         cart.hItems = document.getElementById("cart-items");
-        attributeValue = event.target.getAttribute('data-product');
-        document.getElementById("title-produk").innerHTML = attributeValue;
+      
         // (C2) DRAW PRODUCTS LIST
         cart.hPdt.innerHTML = "";
         let template = document.getElementById("template-product").content, p, item;
         x = 1;
-        for (let id in products) {
+        for (let id in datL[0]) {
             //n = products[name];
-            if (products[id].category === e) {
+            if (datL[0][id].category === e) {
                 item = template.cloneNode(true);
-                item.querySelector(".p-img").src = cart.iURL + products[id].img;
-                item.querySelector(".p-name").textContent = products[id].name;
-                item.querySelector(".p-price").textContent = rupiah(products[id].price);
+                item.querySelector(".p-img").src = cart.iURL + datL[0][id].img;
+                item.querySelector(".p-name").textContent = datL[0][id].name;
+                item.querySelector(".p-price").textContent = rupiah(datL[0][id].price);
                 item.querySelector(".p-add").onclick = () => cart.add(id);
                 item.querySelector(".p-detail").onclick = () => cart.detail(id);
 
@@ -113,9 +128,9 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
                 x++;
             } else if (e === '*') {
                 item = template.cloneNode(true);
-                item.querySelector(".p-img").src = cart.iURL + products[id].img;
-                item.querySelector(".p-name").textContent = products[id].name;
-                item.querySelector(".p-price").textContent = rupiah(products[id].price);
+                item.querySelector(".p-img").src = cart.iURL + datL[0][id].img;
+                item.querySelector(".p-name").textContent = datL[0][id].name;
+                item.querySelector(".p-price").textContent = rupiah(datL[0][id].price);
                 item.querySelector(".p-add").onclick = () => cart.add(id);
                 cart.hPdt.appendChild(item);
                 console.log(x);
@@ -128,12 +143,16 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
         // (C4) LIST CURRENT CART ITEMS
         cart.list();
 
+  
 
 
     },
     // (D) LIST CURRENT CART ITEMS (IN HTML)
     list: () => {
         // (D1) RESET
+
+  
+
         cart.total = 0;
         cart.hItems.innerHTML = "";
         let item, empty = true;
@@ -152,19 +171,19 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
             let template = document.getElementById("template-cart").content, p, item;
             for (let id in cart.items) {
                 //console.log(products)
-                cart.total += cart.items[id] * products[id].price;
-                harga = cart.items[id] * products[id].price;
+                cart.total += cart.items[id] * datL[0][id].price;
+                harga = cart.items[id] * datL[0][id].price;
                 console.log(cart.items[id])
                 item = template.cloneNode(true);
                 item.querySelector(".c-del").onclick = () => cart.remove(id);
-                item.querySelector(".namaproduk").textContent = products[id].name;
-                item.querySelector(".c-price").textContent = ' (' + rupiah(products[id].price) + ')';
+                item.querySelector(".namaproduk").textContent = datL[0][id].name;
+                item.querySelector(".c-price").textContent = ' (' + rupiah(datL[0][id].price) + ')';
                 item.querySelector(".c-qty").value = cart.items[id];
                 item.querySelector(".c-qty").onchange = function () {
                     cart.change(id, this.value);
                 };
                 cart.hItems.appendChild(item);
-                object = { name: products[id].name, quantitas: cart.items[id] };
+                object = { name: datL[0][id].name, quantitas: cart.items[id] };
             }
             //console.log(object)
             // (D3-3) TOTAL AMOUNT
@@ -182,6 +201,8 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
             //element = document.getElementById("message");
             // element.innerHTML = myArray[0].name + '\nTOTAL:' + hargasemua;
         }
+
+     
     },
     // (E) ADD ITEM INTO CART
     add: id => {
@@ -204,10 +225,10 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
             cart.items[pid] = qty;
             cart.total = 0;
             for (let id in cart.items) {
-                cart.total += cart.items[id] * products[id].price;
+                cart.total += cart.items[id] * datL[0][id].price;
                 document.getElementById("c-total").innerHTML = `TOTAL: ${rupiah(cart.total)}`;
                 hargasemua = [rupiah(cart.total)]
-                object = { name: products[id].name, quantitas: cart.items[id] };
+                object = { name: datL[0][id].name, quantitas: cart.items[id] };
             }
         }
     },
@@ -223,8 +244,8 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
         // (C2) DRAW PRODUCTS LIST
         cart.hPdt.innerHTML = "";
         itemx = template.cloneNode(true);
-        itemx.querySelector(".d-img").src = cart.iURL + products[ds].img;
-        p = products[ds]; 
+        itemx.querySelector(".d-img").src = cart.iURL + datL[0][ds].img;
+        p = datL[0][ds]; 
         document.getElementById("title-produk").innerHTML = p.name;
                //itemx.querySelector(".p-back").onclick = () => cart.list;
         itemx.querySelector(".des-produk").innerHTML = '<h4 class="mt-4 mb-4">'+ p.des+'</h4>';
@@ -259,9 +280,9 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
         var semuatotal;
         i = 1;
         for (let id in cart.items) {
-            perharga = cart.items[id] * products[id].price;
-            semuatotal += cart.items[id] * products[id].price;
-            namepro.push(i + '. ' + products[id].name + ' - ( ' + cart.items[id] + ' * ' + products[id].price + ' = ' + perharga + ')')
+            perharga = cart.items[id] * datL[0][id].price;
+            semuatotal += cart.items[id] * datL[0][id].price;
+            namepro.push(i + '. ' + datL[0][id].name + ' - ( ' + cart.items[id] + ' * ' + datL[0][id].price + ' = ' + perharga + ')')
             i++;
         }
         totalfinal = encodeURIComponent('\n\nTOTAL BAYAR: ' + rupiah(cart.total) + '\n terima kasih sudah belanja di clopz kitchen')
