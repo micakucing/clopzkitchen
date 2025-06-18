@@ -18,7 +18,11 @@
     <meta name="twitter:title" content="Clopz Kitchen - Outlet Cemilan Murah">
     <meta name="twitter:description" content="Clopz Kitchen cemilan dengan harga murah rasa bintang lima">
     <meta name="twitter:image" content="https://clopzkitchen.web.id/asset/file.jpg">
-    <script src="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.js"></script>
+
+    <!--<script src="products.js"></script>-->
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -28,11 +32,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-
-    <!--<script src="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/cart.js"></script>-->
-        <script src="c.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/style.css">
+    <script src="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/cart.js"></script>
+   <!--  <script src="c.js"></script>-->
+    <!--<link rel="stylesheet" href="s.css">-->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/style.css">
 </head>
 
 <body>
@@ -40,6 +43,7 @@
     <header id="header-main">
         <!-- navigation main -->
         <nav class="navbar navbar-dark">
+
             <div class="container">
                 <a href="#" class="navbar-brand">
                     <img src="./asset/file.jpg" alt="logo">
@@ -97,11 +101,11 @@
 
 
         <!-- (A1) PRODUCTS LIST -->
-<div class="ps-3 pe-3">
-        <h1 id="title-produk" class="bold">Semua Produk</h1>
+        <div class="ps-3 pe-3">
+            <h1 id="title-produk" class="bold">Semua Produk</h1>
         </div>
         <ul id="cart-products" data-current-page="1"></ul>
-
+        <div id="detail-ps"></div>
         <!-- (A2) CURRENT CART ITEMS -->
         <div id="cart-items"></div>
         <!--<div id="form">
@@ -121,24 +125,32 @@
                         <div class="p-name"></div>
                         <div class="p-price"></div>
                     </div>
+                    <div class="w-btn">
+                    <!--<button class="detail p-detail">Deail</button>-->
                     <button class="cart p-add">Tambahkan</button>
+                    </div>
                 </div>
             </div>
         </li>
     </template>
+    <template id="template-detail">
+        <button class="back p-back" onclick="cart.init()">Kembali</button>
 
+        <div class="img-dwrap">
+            <img class="d-img">
+        </div>
+        <div class="des-produk"></div>
+
+    </template>
     <!-- (B2) CART ITEMS -->
     <template id="template-cart">
         <div class="c-item">
             <input class="c-qty" type="number" min="0">
             <div class="c-name">
-
                 <div class="namaproduk">
-
                 </div>
                 <p class="c-price"></p>
             </div>
-
             <button class="c-del cart">X</button>
         </div>
     </template>
@@ -148,7 +160,6 @@
             <button class="c-checkout cart" onclick="cart.checkout()">Pesan Sekarang</button>
         </div>
     </template>
-
     <template id="template-form">
 
     </template>

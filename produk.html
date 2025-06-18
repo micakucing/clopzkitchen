@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clopz Kitchen - Outlet Cemilan Murah</title>
+    <meta name="description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://clopzkitchen.web.id/">
+    <meta property="og:title" content="Clopz Kitchen - Outlet Cemilan Murah">
+    <meta property="og:description" content="Clopz Kitchen cemilan dengan harga murah rasa bintang lima">
+    <meta property="og:image" itemprop="image" content="https://clopzkitchen.web.id/asset/file.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="https://clopzkitchen.web.id/">
+    <meta property="twitter:url" content="https://clopzkitchen.web.id/">
+    <meta name="twitter:title" content="Clopz Kitchen - Outlet Cemilan Murah">
+    <meta name="twitter:description" content="Clopz Kitchen cemilan dengan harga murah rasa bintang lima">
+    <meta name="twitter:image" content="https://clopzkitchen.web.id/asset/file.jpg">
+    <script src="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/cart.js"></script>
+        <!--<script src="c.js"></script>-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/style.css">
+</head>
+
+<body>
+    <!-- (A) CART -->
+    <header id="header-main">
+        <!-- navigation main -->
+        <nav class="navbar navbar-dark">
+            
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="./asset/file.jpg" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" id="navbarOffcanvas">
+                    <div class="offcanvas-header">
+
+                        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+
+                        <ul
+                            class="navbar-nav justify-content-center flex-grow-1 pe-3 me-auto my-2 my-lg-0 navbar-nav-scroll">
+                            <li onclick="cart.filter('*')" data-product="Semua Produk" data-bs-toggle="collapse"
+                                data-bs-target="#navbar-main.show">
+                                semua produk
+                            </li>
+                            <li onclick="cart.filter('cireng')" data-product="Aneka Cireng" data-bs-toggle="collapse"
+                                data-bs-target="#navbar-main.show">
+                                cireng
+                            </li>
+                            <li onclick="cart.filter('takoyaki')" data-product="Takoyaki" data-bs-toggle="collapse"
+                                data-bs-target="#navbar-main.show">
+                                takoyakis
+                            </li>
+                            <li onclick="cart.filter('risoles')" data-product="Aneka Risoles" data-bs-toggle="collapse"
+                                data-bs-target="#navbar-main.show">
+                                risoles
+                            </li>
+                            <li onclick="cart.filter('dimsum')" data-product="Dimsum" data-bs-toggle="collapse"
+                                data-bs-target="#navbar-main.show">
+                                dimsum
+                            </li>
+                            <li onclick="cart.filter('martabak')" data-product="Martabak" data-bs-toggle="collapse"
+                                data-bs-target="#navbar-main.show">
+                                martabak madura
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div id="cart-wrap">
+
+
+        <!-- (A1) PRODUCTS LIST -->
+<div class="ps-3 pe-3">
+        <h1 id="title-produk" class="bold">Semua Produk</h1>
+        </div>
+       <div class="produk-detail"></div>
+
+        <!-- (A2) CURRENT CART ITEMS -->
+        <div id="cart-items"></div>
+        <!--<div id="form">
+            <form id="whatsapp-form"><label for="phone">Phone Number:</label><input type="tel" id="phone" name="phone" required><br><br><label for="message">Message:</label><textarea id="message" name="message" rows="4" cols="50"></textarea><br><br><button type="button" onclick="sendToWhatsApp()">Send</button></form>
+        </div>-->
+        <a href="https://ramahardian.my.id" class="mb-4 d-block text-center">ramahardian @2025</a>
+    </div>
+
+    <!-- (B) TEMPLATES -->
+    <!-- (B1) PRODUCT CELL -->
+    <template id="template-product">
+        <li>
+            <div class="p-item">
+                <img class="p-img">
+                <div class="p-info">
+                    <div class="p-txt">
+                        <div class="p-name"></div>
+                        <div class="p-price"></div>
+                    </div>
+                    <button class="cart p-add">Tambahkan</button>
+                </div>
+            </div>
+        </li>
+    </template>
+
+    <!-- (B2) CART ITEMS -->
+    <template id="template-cart">
+        <div class="c-item">
+            <input class="c-qty" type="number" min="0">
+            <div class="c-name">
+
+                <div class="namaproduk">
+
+                </div>
+                <p class="c-price"></p>
+            </div>
+
+            <button class="c-del cart">X</button>
+        </div>
+    </template>
+    <template id="template-cart-checkout">
+        <div class="c-go">
+            <button class="c-empty cart" onclick="cart.nuke()">Hapus Semua</button>
+            <button class="c-checkout cart" onclick="cart.checkout()">Pesan Sekarang</button>
+        </div>
+    </template>
+ 
+</body>
+
+</html>

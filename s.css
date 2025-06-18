@@ -57,6 +57,41 @@ input.cart, button.cart {
     background-color: #C1576A;
 }
 /* (B) PRODUCTS */
+.img-dwrap {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img-dwrap img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.des-produk {
+  padding: 20px 30px;
+  margin: 20px 10px;
+  background: #C1576A;
+  border-radius: 10px;
+}
+.w-btn {
+  display: flex;
+}
+.p-detail {
+  width: 50%;
+  border: 0;
+  padding: 10px;
+  color: #fff;
+  background: #C1576A;
+  cursor: pointer;
+  margin: 10px 3px;
+}
+ 
+.list-order li {
+  padding: 3px 0;
+  font-size: 18px; 
+}
 #cart-products {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
