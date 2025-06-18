@@ -63,7 +63,7 @@ var products = {
         img: "martabak.jpg",
         price: 2000,
         category: "martabak",
-         stok: "n"
+         stok: "r"
     },
 
     9: {
