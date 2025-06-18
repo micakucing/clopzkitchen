@@ -59,9 +59,9 @@ var products = {
 
     8: {
         id: 8,
-        name: " Martabak",
+        name: " Martabak / 2 pcs",
         img: "martabak.jpg",
-        price: 2000,
+        price: 5000,
         category: "martabak",
          stok: "r"
     },
@@ -93,7 +93,7 @@ var products = {
     },
     12: {
         id: 12,
-        name: " Risoles mayones pedasx / 3 pcs",
+        name: " Risoles mayones pedas / 3 pcs",
         img: "mayopedas.jpg",
         price: 5000,
         category: "risoles",
