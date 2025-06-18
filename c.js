@@ -72,9 +72,12 @@ var cart = {
         // (C1) GET HTML ELEMENTS
         cart.hPdt = document.getElementById("cart-products");
         cart.hItems = document.getElementById("cart-items");
+        attributeValue = event.target.getAttribute('data-product');
+        document.getElementById("title-produk").innerHTML = attributeValue;
         // (C2) DRAW PRODUCTS LIST
         cart.hPdt.innerHTML = "";
         let template = document.getElementById("template-product").content, p, item;
+        x =1;
         for (let id in products) {
             //n = products[name];
             if (products[id].category === e) {
@@ -83,7 +86,10 @@ var cart = {
                 item.querySelector(".p-name").textContent = products[id].name;
                 item.querySelector(".p-price").textContent = rupiah(products[id].price);
                 item.querySelector(".p-add").onclick = () => cart.add(id);
-                cart.hPdt.appendChild(item);
+               
+                cart.hPdt.appendChild(item); 
+              document.getElementById("title-produk").innerHTML = attributeValue + ' <span style="display:block; font-size: 18px; margin: 10px 5px;">' + x +' total produk</span>';
+               x++;
             } else if (e === '*') {
                 item = template.cloneNode(true);
                 item.querySelector(".p-img").src = cart.iURL + products[id].img;
@@ -91,7 +97,10 @@ var cart = {
                 item.querySelector(".p-price").textContent = rupiah(products[id].price);
                 item.querySelector(".p-add").onclick = () => cart.add(id);
                 cart.hPdt.appendChild(item);
+                 console.log(x);
+               x++;
             }
+          
         }
         // (C3) LOAD CART FROM PREVIOUS SESSION
         cart.load();
