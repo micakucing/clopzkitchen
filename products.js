@@ -15,7 +15,6 @@ var products = {
         img: "ayam.jpg",
         price: 2000,
         category: "cireng besar",
- 
          stok: "r"
     },
     3: {

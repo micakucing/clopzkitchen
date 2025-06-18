@@ -36,7 +36,7 @@ var cart = {
     // (C) INITIALIZE
     init: () => {
         // (C1) GET HTML ELEMENTS
-        
+        /*
 fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
   .then(response => {
     if (!response.ok) {
@@ -51,7 +51,7 @@ fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/products.json')
   .catch(error => {
     console.error('Error loading JSON:', error);
   });
-
+*/
   cart.hPdt = document.getElementById("cart-products");
         cart.hItems = document.getElementById("cart-items");
         cart.ps = document.getElementById("detail-ps");
