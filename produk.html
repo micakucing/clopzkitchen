@@ -7,7 +7,7 @@
     <title>Clopz Kitchen - Outlet Cemilan Murah</title>
     <meta name="description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://clopzkitchen.web.id/">
+
     <meta property="og:title" content="Clopz Kitchen - Outlet Cemilan Murah">
     <meta property="og:description" content="Clopz Kitchen cemilan dengan harga murah rasa bintang lima">
     <meta property="og:image" itemprop="image" content="https://clopzkitchen.web.id/asset/file.jpg">
@@ -22,16 +22,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alasql/4.6.6/alasql.min.js"
+        integrity="sha512-a0dn7nW2exqcTrj7ZcLhRW3iDxCKOh9GPa1jf27qljXfwhYp4tnNmm+8aRNp9c3ijpGsm7EmeGSQmcu80ZB3NA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/cart.js"></script>
-        <!--<script src="c.js"></script>-->
+    <script src="detail.js"></script>
+    <!--<script src="c.js"></script>-->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen/style.css">
+    <link rel="stylesheet" href="s.css">
 </head>
 
 <body>
@@ -39,9 +41,9 @@
     <header id="header-main">
         <!-- navigation main -->
         <nav class="navbar navbar-dark">
-            
+
             <div class="container">
-                <a href="#" class="navbar-brand">
+                <a href="index.html" class="navbar-brand">
                     <img src="./asset/file.jpg" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -97,10 +99,13 @@
 
 
         <!-- (A1) PRODUCTS LIST -->
-<div class="ps-3 pe-3">
-        <h1 id="title-produk" class="bold">Semua Produk</h1>
+        <div class="ps-3 pe-3">
+            <h1 id="title-produk" class="bold">Semua Produk</h1>
         </div>
-       <div class="produk-detail"></div>
+        <ul id="cart-products" data-current-page="1"></ul>
+
+        <div class="produk-detail"></div>
+        <div id="detail-ps"></div>
 
         <!-- (A2) CURRENT CART ITEMS -->
         <div id="cart-items"></div>
@@ -111,7 +116,18 @@
     </div>
 
     <!-- (B) TEMPLATES -->
-    <!-- (B1) PRODUCT CELL -->
+    <template id="template-detail">
+        <div class="wrp-btn">
+            <button class="back p-back" onclick="cart.home()">Kembali ke beranda</button>
+            <button class="cart ood p-add">Tambahkan</button>
+
+        </div>
+        <div class="img-dwrap">
+            <img class="d-img">
+        </div>
+        <div class="des-produk"></div>
+
+    </template>
     <template id="template-product">
         <li>
             <div class="p-item">
@@ -121,12 +137,14 @@
                         <div class="p-name"></div>
                         <div class="p-price"></div>
                     </div>
-                    <button class="cart p-add">Tambahkan</button>
+                    <div class="w-btn">
+                        <button class="detail p-detail">Detail</button>
+                        <button class="cart p-add">Tambahkan</button>
+                    </div>
                 </div>
             </div>
         </li>
     </template>
-
     <!-- (B2) CART ITEMS -->
     <template id="template-cart">
         <div class="c-item">
@@ -148,7 +166,7 @@
             <button class="c-checkout cart" onclick="cart.checkout()">Pesan Sekarang</button>
         </div>
     </template>
- 
+
 </body>
 
 </html>
