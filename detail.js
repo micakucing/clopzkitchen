@@ -87,7 +87,7 @@ var cart = {
                             //cart.hPdt.innerHTML = "";
                             itemx = template.cloneNode(true);
                             itemx.querySelector(".d-img").src = cart.iURL + datx[0]['img'];
-                           itemx.querySelector(".p-add").onclick = () => cart.add(idproduct);
+                           itemx.querySelector(".p-add").onclick = () => cart.add(datx[0]['id']);
 
                             // p = datL[0][idproduct];
                             document.getElementById("title-produk").innerHTML = datx[0]['name'];
@@ -209,14 +209,14 @@ var cart = {
         }
     },
     // (E) ADD ITEM INTO CART
-    add: id => {
+    add: (id) => {
        
         if (cart.items[id] == undefined) { cart.items[id] = 1; }
         else {
             cart.items[id]++;
-        }
-        console.log(cart.items[id])
-        cart.save(); cart.list();
+        } 
+        cart.save(); 
+        cart.list();
     },
     // (F) CHANGE QUANTITY
     change: (pid, qty) => {
