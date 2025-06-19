@@ -34,7 +34,7 @@ var cart = {
 	},
 	init: () => {
 		document.getElementById("title-produk").innerHTML = "<span class='text-left d-block'>Sedang Memuat Harap Tunggu</span>";
-		fetch('product.json').then(response => {
+		fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen@main/data.json').then(response => {
 			if (!response.ok) {
 				throw new Error(`HTTP error! status: ${response.status}`)
 			}
