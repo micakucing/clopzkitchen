@@ -58,7 +58,7 @@ var cart = {
         document.getElementsByTagName('head')[0].appendChild(link);
 
         document.getElementById("title-produk").innerHTML = "<span class='text-left d-block'>Sedang Memuat Harap Tunggu</span>"; 
-        fetch('product.json')
+        fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen@main/data.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -68,14 +68,10 @@ var cart = {
             .then(products => {
                 let template = document.getElementById("template-detail").content;
                 datL.push(products);
-
                 if (idproduct) {
-
                     datx = alasql("SELECT * FROM ? WHERE id =" + idproduct, [datL[0]]);
                     if (datx != '') {
                         for (let i = 0; i < datx.length; i++) {
-
-
                             //let template = document.getElementById("template-detail").content, p, item;
                             st = datx[0]['stok'];
                             document.getElementById("title-produk").innerHTML = datx[0]['name'];
@@ -84,6 +80,10 @@ var cart = {
                             //cart.hPdt.innerHTML = "";
                             itemx = template.cloneNode(true);
                             itemx.querySelector(".d-img").src = cart.iURL + datx[0]['img'];
+ 
+                            if(cartno > datx.length) {
+                               itemx.querySelector(".p-add").style.display="none";
+                            }else{}
                             if(cartno === null){ 
                                  itemx.querySelector(".p-add").style.display="none";
                             }else{
@@ -212,7 +212,7 @@ var cart = {
     },
     // (E) ADD ITEM INTO CART
     add: (id) => {
-       alert(id)
+       
         if (cart.items[id] == undefined) { cart.items[id] = 1; }
         else {
             cart.items[id]++;

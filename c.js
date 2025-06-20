@@ -16,6 +16,7 @@ var cart = {
 	iURL: "asset/image/",
 	currency: "",
 	total: 0,
+	numrow: null,
 	save: () => localStorage.setItem("cart", JSON.stringify(cart.items)),
 	load: () => {
 		cart.items = localStorage.getItem("cart");
@@ -49,6 +50,7 @@ var cart = {
 			cart.ps.innerHTML = "";
 			let template = document.getElementById("template-product").content,
 				p, item;
+
 			for (let id in datL[0]) {
 				p = datL[0][id];
 				st = p.stok;
