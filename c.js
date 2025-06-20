@@ -58,7 +58,7 @@ var cart = {
 					item.querySelector(".p-name").textContent = p.name;
 					item.querySelector(".p-price").textContent = rupiah(p.price);
 					item.querySelector(".p-add").onclick = () => cart.add(id);
-					item.querySelector(".p-detail").onclick = () => window.location.href="produk.html?detail="+datL[0][id].id;
+					item.querySelector(".p-detail").onclick = () => window.location.href="produk.html?detail="+datL[0][id].id+'&d='+id;
 					cart.hPdt.appendChild(item)
 				} else {
 					item = template.cloneNode(!0);
@@ -93,8 +93,8 @@ var cart = {
 				item.querySelector(".p-name").textContent = datL[0][id].name;
 				item.querySelector(".p-price").textContent = rupiah(datL[0][id].price);
 				item.querySelector(".p-add").onclick = () => cart.add(id);
-				item.querySelector(".p-detail").onclick = () => window.location.href="produk.html?detail="+datL[0][id].id;
-				cart.hPdt.appendChild(item);
+	item.querySelector(".p-detail").onclick = () => window.location.href="produk.html?detail="+datL[0][id].id+'&d='+id;
+					cart.hPdt.appendChild(item);
 				document.getElementById("title-produk").innerHTML = attributeValue + ' <span style="display:block; font-size: 18px; margin: 10px 5px;">' + x + ' total produk</span>';
 				x++
 			} else if (e === '*') {
@@ -102,6 +102,8 @@ var cart = {
 				item.querySelector(".p-img").src = cart.iURL + datL[0][id].img;
 				item.querySelector(".p-name").textContent = datL[0][id].name;
 				item.querySelector(".p-price").textContent = rupiah(datL[0][id].price);
+					item.querySelector(".p-detail").onclick = () => window.location.href="produk.html?detail="+datL[0][id].id+'&d='+id;
+
 				item.querySelector(".p-add").onclick = () => cart.add(id);
 				cart.hPdt.appendChild(item);
 				console.log(x);

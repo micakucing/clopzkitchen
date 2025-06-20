@@ -1,9 +1,9 @@
  [
     { 
-        "id": "1",
+        "id": 1,
         "name": "Cireng ayam (kecil) / 1 pcs",
         "img": "ayamkecil.jpg",
-        "price": "1000",
+        "price": 1000,
         "category": "cireng",
         "des": "varian cireng isi suiran ayam pedas dengan ukuran kecil cocok untuk cemilan di waktu santai dan waktu senggang anda. yuk di order, <p><p>di buat dengan bahan bahan yang segar <ul class='list-order'><li>daging ayam segar</li><li>bumbu bumbu fresh </li></ul>",
         "stok": "r"

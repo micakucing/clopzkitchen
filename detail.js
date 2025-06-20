@@ -50,14 +50,15 @@ var cart = {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         let idproduct = urlParams.get('detail');
+        let cartno = urlParams.get('d');
 
         var link = document.createElement('meta');
         link.setAttribute('property', 'og:url');
         link.content = 'https://clopzkitchen.web.id/produk.html?detail=' + idproduct;
         document.getElementsByTagName('head')[0].appendChild(link);
 
-        document.getElementById("title-produk").innerHTML = "<span class='text-left d-block'>Sedang Memuat Harap Tunggu</span>";
-        fetch('https://cdn.jsdelivr.net/gh/micakucing/clopzkitchen@main/data.json')
+        document.getElementById("title-produk").innerHTML = "<span class='text-left d-block'>Sedang Memuat Harap Tunggu</span>"; 
+        fetch('product.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -76,19 +77,19 @@ var cart = {
 
 
                             //let template = document.getElementById("template-detail").content, p, item;
-
-
                             st = datx[0]['stok'];
-
                             document.getElementById("title-produk").innerHTML = datx[0]['name'];
                             cart.ps = document.getElementById("detail-ps");
-
                             // (C2) DRAW PRODUCTS LIST
                             //cart.hPdt.innerHTML = "";
                             itemx = template.cloneNode(true);
                             itemx.querySelector(".d-img").src = cart.iURL + datx[0]['img'];
-                           itemx.querySelector(".p-add").onclick = () => cart.add(datx[0]['id']);
-
+                            if(cartno === null){ 
+                                 itemx.querySelector(".p-add").style.display="none";
+                            }else{
+                                
+                            itemx.querySelector(".p-add").onclick = () => cart.add(cartno);
+                            }
                             // p = datL[0][idproduct];
                             document.getElementById("title-produk").innerHTML = datx[0]['name'];
                             //itemx.querySelector(".p-back").onclick = () => cart.list;
@@ -211,7 +212,7 @@ var cart = {
     },
     // (E) ADD ITEM INTO CART
     add: (id) => {
-       
+       alert(id)
         if (cart.items[id] == undefined) { cart.items[id] = 1; }
         else {
             cart.items[id]++;
