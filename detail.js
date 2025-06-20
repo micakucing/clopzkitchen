@@ -94,6 +94,7 @@ var cart = {
                             //itemx.querySelector(".p-back").onclick = () => cart.list;
                             itemx.querySelector(".des-produk").innerHTML = '<h4 class="mt-4 mb-4">' + datx[0]['des'] + '</h4>';
                             cart.ps.appendChild(itemx);
+                            break;
                         }
 
                     } else {
